@@ -1,0 +1,106 @@
+/* ========================================
+   AS GALAXY REPAIR - ANIMATIONS
+   ======================================== */
+
+/* ===== SHIMMER (untuk logo gradient) ===== */
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ===== GLITCH TEXT ===== */
+.glitch-text {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 var(--primary), -2px 0 #7c4dff; }
+  2% { text-shadow: -4px 0 var(--primary), 4px 0 #7c4dff; }
+  4% { text-shadow: 2px 0 var(--primary), -2px 0 #7c4dff; }
+  6% { text-shadow: 0 0 0 transparent; }
+  8% { text-shadow: 3px 0 #7c4dff, -3px 0 var(--primary); }
+  10% { text-shadow: -2px 0 var(--primary), 2px 0 #7c4dff; }
+  12% { text-shadow: 0 0 0 transparent; }
+  100% { text-shadow: 0 0 0 transparent; }
+}
+
+/* ===== FLOATING BADGE ===== */
+.floating-badge {
+  animation: floatPulse 4s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== AOS FALLBACK ===== */
+[data-aos] {
+  opacity: 0;
+  transition: all 0.9s ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-40px);
+}
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(40px);
+}
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(40px);
+}
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos="flip-up"] {
+  transform: perspective(600px) rotateX(15deg);
+  opacity: 0;
+}
+[data-aos="flip-up"].aos-animate {
+  transform: perspective(600px) rotateX(0deg);
+  opacity: 1;
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.92);
+  opacity: 0;
+}
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-aos="flip-left"] {
+  transform: perspective(600px) rotateY(-15deg);
+  opacity: 0;
+}
+[data-aos="flip-left"].aos-animate {
+  transform: perspective(600px) rotateY(0deg);
+  opacity: 1;
+}
+
+/* ===== SPIN ICON ===== */
+.service-item:hover .icon-wrap i {
+  animation: spin 0.6s ease;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
